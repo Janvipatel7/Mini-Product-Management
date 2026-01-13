@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-custom {
+  padding: 12px 35px;
+  background-color: transparent;
+  border-radius: 9999px; /* pill shape */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  font-family: "Blinker", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.btn-custom:hover {
+  color: black; 
+}
+
+.btn-custom::before,
+.btn-custom::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: white;
+  z-index: -1;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.btn-custom::before {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+
+.btn-custom::after {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.btn-custom:hover::before,
+.btn-custom:hover::after {
+  width: 300%;
+  height: 300%;
+}
